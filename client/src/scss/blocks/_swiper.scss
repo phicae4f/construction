@@ -1,0 +1,147 @@
+@use "../global/variables" as *;
+
+.swiper {
+  padding-top: 180px;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 60px;
+    color: $color-black;
+  }
+
+  &__text {
+    margin: 0 0 30px;
+    font-size: 30px;
+    color: rgba(0, 0, 0, 0.671);
+    text-align: center;
+  }
+
+  &__block {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.062);
+    border-radius: 5px;
+    max-width: 1270px;
+    max-height: 600px;
+  }
+
+  &__img {
+    flex-shrink: 0;
+    height: 600px;
+    width: 700px;
+    border-radius: 5px;
+    transition: opacity 0.5s ease;
+  }
+
+  &__pagination {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  &__dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &.active {
+      background: $color-amber;
+      transform: scale(1.2);
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 546px;
+    align-items: flex-start;
+    padding: 30px 20px 10px 0;
+  }
+
+  &__info-title {
+    margin: 0;
+    font-size: 24px;
+  }
+
+  &__info-text {
+    margin: 0 0 50px;
+    font-size: 22px;
+    color: rgba(0, 0, 0, 0.671);
+    line-height: 22px;
+  }
+
+  &__description {
+    margin: 0;
+    color: $color-black;
+    font-weight: 800;
+    font-size: 24px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style-type: disc;
+    padding: 0 0 0 20px;
+    margin-bottom: 80px;
+  }
+
+  &__item {
+    font-size: 22px;
+    &::marker {
+      color: $color-amber;
+      size: 12px;
+    }
+  }
+
+  &__arrows {
+    display: flex;
+    gap: 20px;
+  }
+
+  &__left {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.185);
+    cursor: pointer;
+    border: none;
+  }
+
+  &__right {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.185);
+    cursor: pointer;
+    border: none;
+  }
+
+  &__left,
+  &__right {
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: $color-amber;
+      color: white;
+    }
+  }
+}

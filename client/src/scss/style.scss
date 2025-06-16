@@ -1,0 +1,13 @@
+@use "./global/variables";
+@use "./global/mixins";
+@use "./global/reboot";
+@use "./global/container";
+@use "./global/visually-hidden";
+
+
+@use "./blocks/header";
+@use "./blocks/hero";
+@use "./blocks/about-us";
+@use "./blocks/swiper";
+@use "./blocks/contact-us";
+@use "./blocks/footer";

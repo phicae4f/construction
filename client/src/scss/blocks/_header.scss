@@ -1,0 +1,83 @@
+@use "../global/variables" as *;
+
+.header {
+  background-color: transparent;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+
+  &--scrolled {
+    transition: 0.2s;
+    background-color: $color-white-50;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.897);
+  }
+
+  &__wrapper {
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    max-width: 263px;
+  }
+
+  &__logo-icon {
+    color: $color-amber;
+  }
+
+  &__logo-title {
+    font-size: 30px;
+    font-weight: 800;
+  }
+
+  &__right {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+  }
+
+  &__list {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    list-style-type: none;
+  }
+
+  &__item {
+    font-size: 22px;
+    font-family: $ff-play;
+    color: $color-white;
+
+    &:hover {
+      cursor: pointer;
+      color: $color-amber;
+      transition: 0.2s ease-in-out;
+    }
+    &--scrolled {
+      color: black;
+    }
+  }
+
+  &__btn {
+    width: 201px;
+    height: 50px;
+    border: none;
+    padding: 7px 12px;
+    border-radius: 5px;
+    background-color: $color-amber;
+    font-size: 22px;
+    font-family: $ff-play;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $color-gamboge;
+      transition: 0.3s ease-out;
+    }
+  }
+}
