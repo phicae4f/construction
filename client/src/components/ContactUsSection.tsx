@@ -1,11 +1,21 @@
-import { useState } from "react";
+import { useState, type ChangeEvent, type FormEvent } from "react";
 import { AiOutlineMail } from "react-icons/ai";
 import { FiPhone } from "react-icons/fi";
 import { SlLocationPin } from "react-icons/sl";
 
+
+interface FormData {
+  name: string;
+  phone: string;
+  email: string;
+  project_type: string;
+  message: string;
+}
+
+
 export const ContactUsSection = () => {
 
-    const [formData, setFormData] = useState({
+    const [formData, setFormData] = useState<FormData>({
         name: "",
         phone: "",
         email: "",
@@ -14,14 +24,13 @@ export const ContactUsSection = () => {
     })
 
     const [isSubmitting, setIsSubmitting] = useState(false);
-    const [submitStatus, setSubmitStatus] = useState(null);
 
-    const handleChange = (e) => {
+    const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
         const {name, value} = e.target
         setFormData(prev => ({...prev, [name]: value}))
     }
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
@@ -34,7 +43,6 @@ export const ContactUsSection = () => {
 
       if (!response.ok) throw new Error('Ошибка отправки');
       
-      setSubmitStatus({ success: true, message: 'Заявка отправлена!' });
       setFormData({
         name: '',
         phone: '',
@@ -43,7 +51,7 @@ export const ContactUsSection = () => {
         message: ''
       });
     } catch (error) {
-      setSubmitStatus({ success: false, message: 'Ошибка отправки' });
+      console.log(error)
     } finally {
       setIsSubmitting(false);
     }
