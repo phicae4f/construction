@@ -35,8 +35,7 @@ export const ContactUsSection = () => {
     setIsSubmitting(true);
     
     try {
-      const response = await fetch(`https://construction-seven-pi.vercel.app
-/api/user/feedback`, {
+      const response = await fetch('http://localhost:8081/api/user/feedback', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
